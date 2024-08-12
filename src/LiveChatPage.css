@@ -1,0 +1,45 @@
+.live-chat-page {
+  padding: 2rem;
+  background-color: #f0f8ff; /* Light blue background */
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #4a4a4a; /* Dark grey color */
+  margin-bottom: 2rem;
+}
+
+.live-chat-option {
+  background-color: #ffffff; /* White background */
+  border: 1px solid #ddd; /* Light grey border */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.live-chat-option h2 {
+  margin-top: 0;
+  color: #4a4a4a; /* Dark grey color */
+}
+
+.live-chat-option p {
+  color: #555; /* Slightly lighter grey for description */
+}
+
+.chat-button {
+  display: inline-block;
+  background-color: #1a73e8; /* Blue color */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.chat-button:hover {
+  background-color: #0c59d8; /* Darker blue color */
+}

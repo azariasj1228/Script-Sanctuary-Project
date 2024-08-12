@@ -1,0 +1,94 @@
+.some-girls-do-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5; /* Adjust to match your theme */
+  color: #333;
+}
+
+.book-details {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.book-image img {
+  max-width: 300px;
+  height: auto;
+  cursor: pointer;
+}
+
+.book-summary {
+  margin-left: 20px;
+  flex: 1;
+}
+
+.book-summary h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.book-summary p {
+  margin: 10px 0;
+}
+
+.book-summary ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.book-summary li {
+  margin: 5px 0;
+}
+
+.join-meeting-button {
+  padding: 10px 20px;
+  background-color: #a52a2a; /* Adjust to match your theme */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.join-meeting-button:hover {
+  background-color: #8b0000; /* Adjust to match your theme */
+}
+
+.comments-section {
+  width: 100%;
+  max-width: 800px;
+}
+
+.comments-list {
+  margin-bottom: 20px;
+}
+
+.comment-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.add-comment textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.add-comment button {
+  padding: 10px 20px;
+  background-color: #a52a2a; /* Adjust to match your theme */
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.add-comment button:hover {
+  background-color: #8b0000; /* Adjust to match your theme */
+}

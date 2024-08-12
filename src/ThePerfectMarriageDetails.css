@@ -1,0 +1,141 @@
+/* ThePerfectMarriageDetails.css */
+.details-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  color: #333; /* Dark gray text color */
+}
+
+.details-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.details-header h1 {
+  font-size: 2.5rem; /* Increased font size for better visibility */
+  margin: 0;
+  color: #222; /* Slightly darker gray for header */
+}
+
+.details-content {
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.details-image {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.details-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 400px; /* Fixed width for larger image */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.details-text {
+  flex: 2;
+}
+
+.details-text h2 {
+  font-size: 2rem; /* Increased font size for section headers */
+  margin-bottom: 10px;
+  color: #222; /* Darker gray for section headers */
+}
+
+.details-text p {
+  margin: 10px 0;
+  font-size: 1.125rem; /* Slightly larger font size for better readability */
+  line-height: 1.6; /* Increased line height for readability */
+  color: #444; /* Slightly lighter gray for text */
+}
+
+.details-text .button {
+  display: block;
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  text-decoration: none;
+  padding: 12px 24px; /* Larger padding for better touch targets */
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.125rem; /* Larger font size for button */
+}
+
+.details-text .button:hover {
+  background-color: #0056b3; /* Button hover color */
+}
+
+.comment-section {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.comment-section h3 {
+  font-size: 1.5rem; /* Increased font size for the comments header */
+  margin-bottom: 10px;
+  color: #222; /* Darker gray for comment header */
+}
+
+.comment-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-section textarea {
+  width: 100%;
+  padding: 12px; /* Larger padding for textarea */
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1.125rem; /* Larger font size for better readability */
+}
+
+.comment-section button {
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem; /* Font size for button */
+}
+
+.comment-section button:hover {
+  background-color: #0056b3; /* Button hover color */
+}
+
+.comment-list {
+  margin-top: 20px;
+}
+
+.comment-list .comment-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.comment-list .comment-item p {
+  margin: 5px 0;
+  color: #333; /* Dark gray for comment text */
+}
+
+.comment-list .comment-item button {
+  background-color: #dc3545; /* Delete button background color */
+  color: #fff; /* Delete button text color */
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.875rem; /* Font size for delete button */
+}
+
+.comment-list .comment-item button:hover {
+  background-color: #c82333; /* Delete button hover color */
+}

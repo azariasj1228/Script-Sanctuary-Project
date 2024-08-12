@@ -1,0 +1,77 @@
+.profile-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 1rem; /* Add some padding to the top */
+  background-color: #f5f5dc; /* Beige background */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-height: calc(
+    100vh - 2rem
+  ); /* Ensure the container fits within the viewport */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.profile-title {
+  text-align: center;
+  color: #8b4513; /* Brown color */
+}
+
+.profile-section {
+  margin-bottom: 2rem;
+}
+
+.profile-section h3 {
+  color: #8b4513; /* Brown color */
+  margin-bottom: 1rem;
+}
+
+.profile-section p {
+  color: #8b4513; /* Brown color for personal information text */
+}
+
+.bookshelf {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.book-card {
+  background-color: #fff;
+  border: 1px solid #8b4513; /* Brown border */
+  border-radius: 4px;
+  padding: 0.5rem;
+  text-align: center;
+  width: 120px;
+}
+
+.book-cover {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.book-title {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: #8b4513; /* Brown color */
+}
+
+.book-author {
+  font-size: 0.8rem;
+  color: #8b4513; /* Change from #555 to brown */
+}
+
+.add-book input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #8b4513;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+.recommendations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
