@@ -1,0 +1,138 @@
+/* General styles */
+body {
+  font-family: "Garamond", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f1ea;
+}
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90vh; /* Reduce the overall height */
+  overflow-y: auto; /* Add scrolling if content overflows vertically */
+}
+
+.hero-section {
+  text-align: center;
+  padding: 15px 8px; /* Further reduced padding */
+  background-color: #e0dcd1;
+}
+
+.hero-content h1 {
+  margin: 0;
+  font-size: 1.8rem; /* Reduced font size */
+  color: #4a3d31;
+}
+
+.hero-content p {
+  font-size: 0.9rem; /* Reduced font size */
+  color: #6b5b4f;
+}
+
+.hero-btn {
+  background-color: #8e735b;
+  color: #fff;
+  padding: 6px 12px; /* Further reduced button size */
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.85rem; /* Reduced font size */
+}
+
+.carousel-section {
+  width: 100%;
+  padding: 8px; /* Further reduced padding */
+  background-color: #f4f1ea;
+}
+
+.carousel-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 4px 0; /* Further reduced padding */
+  scroll-behavior: smooth;
+}
+
+.carousel {
+  display: flex;
+  gap: 10px; /* Further reduced gap for spacing */
+}
+
+.carousel-item {
+  display: inline-block;
+  width: 140px; /* Further reduced width for smaller books */
+  text-align: center;
+  background-color: #d8cfc4;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #b0a99f;
+}
+
+.carousel-item h3 {
+  margin: 6px 0 3px; /* Reduced margins */
+  color: #4a3d31;
+  font-size: 0.95rem; /* Reduced font size */
+}
+
+.carousel-item p {
+  color: #6b5b4f;
+  font-size: 0.85rem; /* Reduced font size */
+}
+
+.carousel-item:hover {
+  transform: scale(1.04); /* Slightly less scaling on hover */
+}
+
+.features-section,
+.cta-section {
+  text-align: center;
+  padding: 12px; /* Further reduced padding */
+  background-color: #e0dcd1;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Reduced gap */
+  justify-content: center;
+}
+
+.feature {
+  flex: 1;
+  min-width: 160px; /* Reduced min-width */
+  padding: 6px; /* Further reduced padding */
+  background-color: #d8cfc4;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slightly smaller shadow */
+}
+
+.feature h3 {
+  color: #4a3d31;
+  font-size: 0.95rem; /* Reduced font size */
+}
+
+.feature p {
+  color: #6b5b4f;
+  font-size: 0.85rem; /* Reduced font size */
+}
+
+.cta-section {
+  background-color: #8e735b;
+  color: #fff;
+}
+
+.cta-btn {
+  background-color: #4a3d31;
+  color: #fff;
+  padding: 6px 12px; /* Further reduced button size */
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.85rem; /* Reduced font size */
+}
