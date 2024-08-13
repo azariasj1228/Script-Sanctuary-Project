@@ -13,7 +13,7 @@ import Quiz from "./Quiz";
 import Recommendations from "./Recommendations";
 import SomeGirlsDoDetails from "./SomeGirlsDoDetails";
 import ThePerfectMarriageDetails from "./ThePerfectMarriageDetails";
-import SevenHusbandsDetails from "./SevenHusbandsDetails"; // Import the new Details component
+import TheSevenHusbandsDetails from "./TheSevenHusbandsDetails"; // Import the new Details component
 
 const App = () => {
   return (
@@ -43,7 +43,7 @@ const App = () => {
         />
         <Route
           path="/thesevenhusbandsdetails"
-          element={<SevenHusbandsDetails />}
+          element={<TheSevenHusbandsDetails />}
         />{" "}
         {/* Add new route */}
       </Routes>
