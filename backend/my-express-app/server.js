@@ -5,7 +5,7 @@ const http = require("http");
 const { Server } = require("socket.io");
 
 const app = express();
-const port = process.env.PORT || 5173; // Use environment variable or default to 5173
+const port = process.env.PORT || 5001; // Use environment variable or default to 5173
 
 const server = http.createServer(app);
 const io = new Server(server, {
