@@ -5,8 +5,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      // Uncomment if you have specific reasons to externalize certain modules
-      // external: ['react-calendar'],
+      external: ["react-router-dom"], // Add any other external dependencies here
     },
   },
 });
