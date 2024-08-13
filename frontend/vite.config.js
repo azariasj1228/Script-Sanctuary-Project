@@ -8,4 +8,8 @@ export default defineConfig({
       external: ["react-router-dom"], // Add any other external dependencies here
     },
   },
+  server: {
+    host: "0.0.0.0",
+    port: 3000,
+  },
 });
