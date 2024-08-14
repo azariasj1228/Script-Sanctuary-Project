@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ProfilePage.css";
+import Header from "./Header";
 
 const ProfilePage = () => {
   const userData = JSON.parse(localStorage.getItem("userData")) || {};
