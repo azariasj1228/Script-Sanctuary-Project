@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ProfilePage.css";
+import Header from "./Header"; // Import the Header component
 
 const ProfilePage = () => {
   const userData = JSON.parse(localStorage.getItem("userData")) || {};
@@ -54,6 +55,7 @@ const ProfilePage = () => {
 
   return (
     <div className="profile-container">
+      <Header /> {/* Add the Header component here */}
       <h2 className="profile-title">Profile Page</h2>
       <div className="profile-section">
         <h3>About You</h3>
@@ -62,7 +64,6 @@ const ProfilePage = () => {
         <p>Favorite Book: {userData.favoriteBook}</p>
         <p>Favorite Genre: {userData.favoriteGenre}</p>
       </div>
-
       <div className="profile-section">
         <h3>Books You're Reading</h3>
         <div className="bookshelf">
@@ -94,7 +95,6 @@ const ProfilePage = () => {
           </div>
         </div>
       </div>
-
       <div className="profile-section">
         <h3>Books You Want to Read</h3>
         <div className="bookshelf">
@@ -126,7 +126,6 @@ const ProfilePage = () => {
           </div>
         </div>
       </div>
-
       <div className="profile-section">
         <h3>Recommended for You</h3>
         <div className="recommendations">
