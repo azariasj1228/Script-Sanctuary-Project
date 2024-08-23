@@ -12,7 +12,7 @@ app.use(cors());
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:5173", // Ensure this matches your React app's port
+    origin: "https://script-sanctuary-project.onrender.com", // Ensure this matches your React app's port
     methods: ["GET", "POST"],
   },
 });
@@ -21,6 +21,7 @@ const io = new Server(server, {
 const users = [];
 
 // Signup endpoint
+// hash password
 app.post("/signup", (req, res) => {
   const { username, password, email, favoriteBook, favoriteGenre } = req.body;
 
