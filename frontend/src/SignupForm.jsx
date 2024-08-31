@@ -45,13 +45,16 @@ const SignupForm = () => {
 
     // Submit data to backend
     try {
-      const response = await fetch("http://localhost:5173/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://script-sanctuary-project.onrender.com/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       console.log("Response received:", response);
 

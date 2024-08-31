@@ -20,13 +20,16 @@ const LoginForm = () => {
     console.log("Form submitted");
 
     try {
-      const response = await fetch("http://localhost:5001/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://script-sanctuary-project.onrender.com/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       console.log("Response received:", response);
 
