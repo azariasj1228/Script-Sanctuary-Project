@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const http = require("http");
+const bcrypt = require("bcrypt"); // Import bcrypt for password hashing
 const { Server } = require("socket.io");
 
 const app = express();
@@ -20,9 +21,8 @@ const io = new Server(server, {
 // In-memory store for users (for demonstration purposes)
 const users = [];
 
-// Signup endpoint
-// hash password
-app.post("/signup", (req, res) => {
+// Signup endpoint with password hashing
+app.post("/signup", async (req, res) => {
   const { username, password, email, favoriteBook, favoriteGenre } = req.body;
 
   // Check if email or username already exists
@@ -55,26 +55,52 @@ app.post("/signup", (req, res) => {
       .json({ message: "Username must be at least 4 characters long" });
   }
 
-  // Save new user
-  const userData = { username, email, password, favoriteBook, favoriteGenre };
+  // Hash the password before saving
+  const hashedPassword = await bcrypt.hash(password, 10);
+
+  // Save new user with hashed password
+  const userData = {
+    username,
+    email,
+    password: hashedPassword,
+    favoriteBook,
+    favoriteGenre,
+  };
   users.push(userData);
 
-  res.status(200).json(userData);
+  // Send a successful response with the new user data
+  res.status(200).json({
+    message: "User created successfully",
+    user: userData,
+  });
 });
 
-// Login endpoint
-app.post("/login", (req, res) => {
+// Login endpoint with password comparison
+app.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
-  const user = users.find(
-    (user) => user.email === email && user.password === password
-  );
+  const user = users.find((user) => user.email === email);
 
   if (!user) {
     return res.status(400).json({ message: "Invalid email or password." });
   }
 
-  res.status(200).json(user);
+  // Compare the hashed password with the user input
+  const isPasswordMatch = await bcrypt.compare(password, user.password);
+  if (!isPasswordMatch) {
+    return res.status(400).json({ message: "Invalid email or password." });
+  }
+
+  // Send the user data back as the login was successful
+  res.status(200).json({
+    message: "Login successful",
+    user,
+  });
+});
+
+// 404 handler for unknown routes
+app.use((req, res, next) => {
+  res.status(404).json({ message: "Route not found" });
 });
 
 // Socket.IO setup

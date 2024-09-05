@@ -1,5 +1,3 @@
-// SignupForm.jsx
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./SignupForm.css";
@@ -58,19 +56,36 @@ const SignupForm = () => {
 
       console.log("Response received:", response);
 
+      // Check if the response is OK
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.message);
+        // Attempt to parse error message from server
+        let errorMessage = "Error submitting form.";
+        try {
+          const errorData = await response.json();
+          errorMessage = errorData.message;
+        } catch (jsonError) {
+          console.error("Failed to parse error response JSON:", jsonError);
+        }
+        throw new Error(errorMessage);
       }
 
-      const userData = await response.json();
+      // Check if the response contains valid JSON
+      let userData;
+      try {
+        userData = await response.json();
+      } catch (jsonError) {
+        console.error("Failed to parse success response JSON:", jsonError);
+        throw new Error("Invalid JSON response from server.");
+      }
+
       console.log("User data received:", userData);
       localStorage.setItem("userData", JSON.stringify(userData));
       navigate("/profile");
     } catch (error) {
       console.error("Error submitting form:", error);
       alert(
-        "An error occurred while submitting the form. Please try again later."
+        error.message ||
+          "An error occurred while submitting the form. Please try again later."
       );
     }
   };
