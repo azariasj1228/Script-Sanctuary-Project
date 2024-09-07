@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const http = require("http");
-const bcrypt = require("bcrypt"); // Import bcrypt for password hashing
 const { Server } = require("socket.io");
 
 const app = express();
@@ -21,8 +20,8 @@ const io = new Server(server, {
 // In-memory store for users (for demonstration purposes)
 const users = [];
 
-// Signup endpoint with password hashing
-app.post("/signup", async (req, res) => {
+// Signup endpoint (without password hashing)
+app.post("/signup", (req, res) => {
   const { username, password, email, favoriteBook, favoriteGenre } = req.body;
 
   // Check if email or username already exists
@@ -55,14 +54,11 @@ app.post("/signup", async (req, res) => {
       .json({ message: "Username must be at least 4 characters long" });
   }
 
-  // Hash the password before saving
-  const hashedPassword = await bcrypt.hash(password, 10);
-
-  // Save new user with hashed password
+  // Save new user without password hashing
   const userData = {
     username,
     email,
-    password: hashedPassword,
+    password, // Save the plain text password (for demonstration purposes, not recommended for production)
     favoriteBook,
     favoriteGenre,
   };
@@ -75,8 +71,8 @@ app.post("/signup", async (req, res) => {
   });
 });
 
-// Login endpoint with password comparison
-app.post("/login", async (req, res) => {
+// Login endpoint (without password comparison)
+app.post("/login", (req, res) => {
   const { email, password } = req.body;
 
   const user = users.find((user) => user.email === email);
@@ -85,9 +81,8 @@ app.post("/login", async (req, res) => {
     return res.status(400).json({ message: "Invalid email or password." });
   }
 
-  // Compare the hashed password with the user input
-  const isPasswordMatch = await bcrypt.compare(password, user.password);
-  if (!isPasswordMatch) {
+  // Simple password check (no hashing)
+  if (user.password !== password) {
     return res.status(400).json({ message: "Invalid email or password." });
   }
 
