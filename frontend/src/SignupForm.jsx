@@ -44,7 +44,7 @@ const SignupForm = () => {
     // Submit data to backend
     try {
       const response = await fetch(
-        "https://script-sanctuary-project.onrender.com/signup",
+        "https://script-sanctuary-project.onrender.com/signup", // Ensure this endpoint is correct
         {
           method: "POST",
           headers: {
@@ -56,15 +56,20 @@ const SignupForm = () => {
 
       console.log("Response received:", response);
 
-      // Check if the response is OK
+      // Check if the response is OK (status code 2xx)
       if (!response.ok) {
-        // Attempt to parse error message from server
         let errorMessage = "Error submitting form.";
         try {
           const errorData = await response.json();
           errorMessage = errorData.message;
         } catch (jsonError) {
           console.error("Failed to parse error response JSON:", jsonError);
+          if (response.status === 404) {
+            errorMessage =
+              "The server could not be found. Please try again later.";
+          } else {
+            errorMessage = "An unknown error occurred.";
+          }
         }
         throw new Error(errorMessage);
       }
@@ -80,7 +85,7 @@ const SignupForm = () => {
 
       console.log("User data received:", userData);
       localStorage.setItem("userData", JSON.stringify(userData));
-      navigate("/profile");
+      navigate("/profile"); // Navigate to profile page on successful signup
     } catch (error) {
       console.error("Error submitting form:", error);
       alert(
