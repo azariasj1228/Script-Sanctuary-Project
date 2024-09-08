@@ -44,7 +44,7 @@ const SignupForm = () => {
     // Submit data to backend
     try {
       const response = await fetch(
-        "https://script-sanctuary-project.onrender.com/signup", // Ensure this endpoint is correct
+        "https://script-sanctuary-project-1.onrender.com/signup", // Ensure this endpoint is correct
         {
           method: "POST",
           headers: {
